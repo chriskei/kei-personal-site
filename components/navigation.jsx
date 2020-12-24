@@ -3,12 +3,13 @@ import Link from 'next/link';
 import styles from '../styles/navigation.module.scss';
 
 const Navigation = (props) => {
-  const { currentSection } = props;
+  const { currentSection, setCurrentSection } = props;
 
   return (
     <nav className={styles.navBar}>
       <Link href="/#hello" passHref={true} replace={true}>
         <a
+          onClick={() => setCurrentSection(0)}
           style={{ color: currentSection == 0 ? 'orange' : 'white' }}
           className={styles.large}
         >
@@ -17,6 +18,7 @@ const Navigation = (props) => {
       </Link>
       <Link href="/#about" passHref={true} replace={true}>
         <a
+          onClick={() => setCurrentSection(1)}
           style={{ color: currentSection == 1 ? 'orange' : 'white' }}
           className={styles.large}
         >
@@ -25,6 +27,7 @@ const Navigation = (props) => {
       </Link>
       <Link href="/#work" passHref={true} replace={true}>
         <a
+          onClick={() => setCurrentSection(2)}
           style={{ color: currentSection == 2 ? 'orange' : 'white' }}
           className={styles.large}
         >
@@ -33,6 +36,7 @@ const Navigation = (props) => {
       </Link>
       <Link href="/#contact" passHref={true} replace={true}>
         <a
+          onClick={() => setCurrentSection(3)}
           style={{ color: currentSection == 3 ? 'orange' : 'white' }}
           className={styles.large}
         >

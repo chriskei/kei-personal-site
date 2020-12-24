@@ -20,7 +20,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navigation currentSection={currentSection} />
+      <Navigation
+        currentSection={currentSection}
+        setCurrentSection={setCurrentSection}
+      />
       <HelloSection setCurrentSection={setCurrentSection} />
       <AboutSection setCurrentSection={setCurrentSection} />
       <WorkSection setCurrentSection={setCurrentSection} />
