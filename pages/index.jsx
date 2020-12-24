@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
+
 import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
+
 import { Navigation } from '../components/navigation';
+import { HelloSection } from '../components/hello-section';
+import { AboutSection } from '../components/about-section';
+import { WorkSection } from '../components/work-section';
+import { ContactSection } from '../components/contact-section';
+
+import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+  const [currentSection, setCurrentSection] = useState(0);
+
   return (
     <div className={styles.container}>
       <Head>
@@ -11,18 +20,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Navigation />
-      <div id="home" style={{ background: 'red', height: 100, width: '100%' }} />
-      <div
-        id="about"
-        style={{ background: 'yellow', height: 100, width: 100 }}
-      />
-      <div id="work" style={{ background: 'green', height: 100, width: 100 }} />
-      <div
-        id="contact"
-        style={{ background: 'blue', height: 100, width: 100
-       }}
-      />
+      <Navigation currentSection={currentSection} />
+      <HelloSection setCurrentSection={setCurrentSection} />
+      <AboutSection setCurrentSection={setCurrentSection} />
+      <WorkSection setCurrentSection={setCurrentSection} />
+      <ContactSection setCurrentSection={setCurrentSection} />
 
       <main className={styles.main}>
         <h1 className={styles.title}>

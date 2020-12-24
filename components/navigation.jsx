@@ -1,20 +1,44 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import styles from '../styles/navigation.module.scss';
 
-const Navigation = () => {
-  const [color, setColor] = useState('orange');
+const Navigation = (props) => {
+  const { currentSection } = props;
 
   return (
     <nav className={styles.navBar}>
-      <Link href="/#home" passHref={true}>
-        <a style={{ color: color }} className={styles.large}>
+      <Link href="/#hello" passHref={true} replace={true}>
+        <a
+          style={{ color: currentSection == 0 ? 'orange' : 'white' }}
+          className={styles.large}
+        >
           CHRISTOPHER KEI
         </a>
       </Link>
-      <Link href="/#about">ABOUT</Link>
-      <Link href="/#work">WORK</Link>
-      <Link href="/#contact">CONTACT</Link>
+      <Link href="/#about" passHref={true} replace={true}>
+        <a
+          style={{ color: currentSection == 1 ? 'orange' : 'white' }}
+          className={styles.large}
+        >
+          ABOUT
+        </a>
+      </Link>
+      <Link href="/#work" passHref={true} replace={true}>
+        <a
+          style={{ color: currentSection == 2 ? 'orange' : 'white' }}
+          className={styles.large}
+        >
+          WORK
+        </a>
+      </Link>
+      <Link href="/#contact" passHref={true} replace={true}>
+        <a
+          style={{ color: currentSection == 3 ? 'orange' : 'white' }}
+          className={styles.large}
+        >
+          CONTACT
+        </a>
+      </Link>
     </nav>
   );
 };
