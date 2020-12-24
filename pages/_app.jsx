@@ -1,12 +1,7 @@
 import React from 'react';
 import '../styles/globals.css';
 
-interface MyAppProps {
-  Component: any;
-  pageProps: any;
-}
-
-function MyApp(props: MyAppProps) {
+function MyApp(props) {
   const { Component, pageProps } = props;
 
   return <Component {...pageProps} />;

@@ -1,6 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import styles from '../styles/Home.module.scss';
+import { Navigation } from '../components/navigation';
 
 export default function Home() {
   return (
@@ -9,6 +10,19 @@ export default function Home() {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navigation />
+      <div id="home" style={{ background: 'red', height: 100, width: '100%' }} />
+      <div
+        id="about"
+        style={{ background: 'yellow', height: 100, width: 100 }}
+      />
+      <div id="work" style={{ background: 'green', height: 100, width: 100 }} />
+      <div
+        id="contact"
+        style={{ background: 'blue', height: 100, width: 100
+       }}
+      />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
