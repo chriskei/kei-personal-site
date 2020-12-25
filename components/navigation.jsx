@@ -1,50 +1,54 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { NavigationLink } from './navigation-link';
 import styles from '../styles/navigation.module.scss';
 
 const Navigation = (props) => {
   const { currentSection, setCurrentSection } = props;
+  const linkColor = (index) => {
+    return currentSection === index ? 'orange' : 'white';
+  };
 
   return (
-    <nav className={styles.navBar}>
+    <nav className={styles.navigationBar}>
       <Link href="/#hello" passHref replace>
-        <NavigationLink
-          changeSection={() => setCurrentSection(0)}
-          isCurrentSection={currentSection == 0}
+        <a
+          onClick={() => setCurrentSection(0)}
+          style={{ color: linkColor(0) }}
           className={styles.largeLink}
         >
           CHRISTOPHER KEI
-        </NavigationLink>
+        </a>
       </Link>
-      <Link href="/#about" passHref replace>
-        <NavigationLink
-          changeSection={() => setCurrentSection(1)}
-          isCurrentSection={currentSection == 1}
-          className={styles.smallLink}
-        >
-          ABOUT
-        </NavigationLink>
-      </Link>
-      <Link href="/#work" passHref replace>
-        <NavigationLink
-          changeSection={() => setCurrentSection(2)}
-          isCurrentSection={currentSection == 2}
-          className={styles.smallLink}
-        >
-          WORK
-        </NavigationLink>
-      </Link>
-      <Link href="/#contact" passHref replace>
-        <NavigationLink
-          changeSection={() => setCurrentSection(3)}
-          isCurrentSection={currentSection == 3}
-          className={styles.smallLink}
-        >
-          CONTACT
-        </NavigationLink>
-      </Link>
+      <div>
+        <Link href="/#about" passHref replace>
+          <a
+            onClick={() => setCurrentSection(1)}
+            style={{ color: linkColor(1) }}
+            className={styles.smallLink}
+          >
+            ABOUT
+          </a>
+        </Link>
+        <Link href="/#work" passHref replace>
+          <a
+            onClick={() => setCurrentSection(2)}
+            style={{ color: linkColor(2) }}
+            className={styles.smallLink}
+          >
+            WORK
+          </a>
+        </Link>
+        <Link href="/#contact" passHref replace>
+          <a
+            onClick={() => setCurrentSection(3)}
+            style={{ color: linkColor(3) }}
+            className={styles.smallLink}
+          >
+            CONTACT
+          </a>
+        </Link>
+      </div>
     </nav>
   );
 };

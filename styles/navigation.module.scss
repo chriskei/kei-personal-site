@@ -1,22 +1,27 @@
-.navBar {
+.navigationBar {
   position: sticky;
   top: 0;
   background-color: black;
   height: 5rem;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
   a:hover {
     cursor: pointer;
   }
 }
 
+%link {
+  margin: 0 1rem;
+}
+
 .largeLink {
+  @extend %link;
   font-size: 2rem;
-  margin: 0 1rem 0 0;
 }
 
 .smallLink {
+  @extend %link;
   font-size: 1rem;
-  margin: 0 1rem 0 0;
 }
