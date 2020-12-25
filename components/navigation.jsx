@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
+import { NavigationLink } from './navigation-link';
 import styles from '../styles/navigation.module.scss';
 
 const Navigation = (props) => {
@@ -9,40 +10,40 @@ const Navigation = (props) => {
   return (
     <nav className={styles.navBar}>
       <Link href="/#hello" passHref replace>
-        <a
-          onClick={() => setCurrentSection(0)}
-          style={{ color: currentSection == 0 ? 'orange' : 'white' }}
-          className={styles.large}
+        <NavigationLink
+          changeSection={() => setCurrentSection(0)}
+          isCurrentSection={currentSection == 0}
+          className={styles.largeLink}
         >
           CHRISTOPHER KEI
-        </a>
+        </NavigationLink>
       </Link>
       <Link href="/#about" passHref replace>
-        <a
-          onClick={() => setCurrentSection(1)}
-          style={{ color: currentSection == 1 ? 'orange' : 'white' }}
-          className={styles.large}
+        <NavigationLink
+          changeSection={() => setCurrentSection(1)}
+          isCurrentSection={currentSection == 1}
+          className={styles.smallLink}
         >
           ABOUT
-        </a>
+        </NavigationLink>
       </Link>
       <Link href="/#work" passHref replace>
-        <a
-          onClick={() => setCurrentSection(2)}
-          style={{ color: currentSection == 2 ? 'orange' : 'white' }}
-          className={styles.large}
+        <NavigationLink
+          changeSection={() => setCurrentSection(2)}
+          isCurrentSection={currentSection == 2}
+          className={styles.smallLink}
         >
           WORK
-        </a>
+        </NavigationLink>
       </Link>
       <Link href="/#contact" passHref replace>
-        <a
-          onClick={() => setCurrentSection(3)}
-          style={{ color: currentSection == 3 ? 'orange' : 'white' }}
-          className={styles.large}
+        <NavigationLink
+          changeSection={() => setCurrentSection(3)}
+          isCurrentSection={currentSection == 3}
+          className={styles.smallLink}
         >
           CONTACT
-        </a>
+        </NavigationLink>
       </Link>
     </nav>
   );

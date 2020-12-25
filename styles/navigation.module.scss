@@ -2,10 +2,21 @@
   position: sticky;
   top: 0;
   background-color: black;
+  height: 5rem;
   width: 100%;
+  display: flex;
+  align-items: center;
+  a:hover {
+    cursor: pointer;
+  }
 }
 
-.large {
+.largeLink {
   font-size: 2rem;
+  margin: 0 1rem 0 0;
+}
+
+.smallLink {
+  font-size: 1rem;
   margin: 0 1rem 0 0;
 }

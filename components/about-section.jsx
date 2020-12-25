@@ -1,21 +1,14 @@
 import React from 'react';
 
+import { Section } from './section';
+
 const AboutSection = (props) => {
-  const { setCurrentSection } = props;
+  const { changeSection } = props;
 
   return (
-    <div
-      id="about"
-      onMouseOver={() => setCurrentSection(1)}
-      style={{
-        background: 'black',
-        height: 500,
-        width: '100%',
-        color: 'orange',
-      }}
-    >
-      About section
-    </div>
+    <Section id="about" changeSection={changeSection}>
+      <p>About section</p>
+    </Section>
   );
 };
 

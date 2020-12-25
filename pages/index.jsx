@@ -22,10 +22,10 @@ export default function Home() {
         currentSection={currentSection}
         setCurrentSection={setCurrentSection}
       />
-      <HelloSection setCurrentSection={setCurrentSection} />
-      <AboutSection setCurrentSection={setCurrentSection} />
-      <WorkSection setCurrentSection={setCurrentSection} />
-      <ContactSection setCurrentSection={setCurrentSection} />
+      <HelloSection changeSection={() => setCurrentSection(0)} />
+      <AboutSection changeSection={() => setCurrentSection(1)} />
+      <WorkSection changeSection={() => setCurrentSection(2)} />
+      <ContactSection changeSection={() => setCurrentSection(3)} />
       <Footer />
     </div>
   );
