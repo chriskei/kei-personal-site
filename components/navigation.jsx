@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+
 import styles from '../styles/navigation.module.scss';
 
 const Navigation = (props) => {
@@ -7,7 +8,7 @@ const Navigation = (props) => {
 
   return (
     <nav className={styles.navBar}>
-      <Link href="/#hello" passHref={true} replace={true}>
+      <Link href="/#hello" passHref replace>
         <a
           onClick={() => setCurrentSection(0)}
           style={{ color: currentSection == 0 ? 'orange' : 'white' }}
@@ -16,7 +17,7 @@ const Navigation = (props) => {
           CHRISTOPHER KEI
         </a>
       </Link>
-      <Link href="/#about" passHref={true} replace={true}>
+      <Link href="/#about" passHref replace>
         <a
           onClick={() => setCurrentSection(1)}
           style={{ color: currentSection == 1 ? 'orange' : 'white' }}
@@ -25,7 +26,7 @@ const Navigation = (props) => {
           ABOUT
         </a>
       </Link>
-      <Link href="/#work" passHref={true} replace={true}>
+      <Link href="/#work" passHref replace>
         <a
           onClick={() => setCurrentSection(2)}
           style={{ color: currentSection == 2 ? 'orange' : 'white' }}
@@ -34,7 +35,7 @@ const Navigation = (props) => {
           WORK
         </a>
       </Link>
-      <Link href="/#contact" passHref={true} replace={true}>
+      <Link href="/#contact" passHref replace>
         <a
           onClick={() => setCurrentSection(3)}
           style={{ color: currentSection == 3 ? 'orange' : 'white' }}

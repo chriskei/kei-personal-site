@@ -7,7 +7,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "clean": "npx eslint --fix pages/* && npx prettier --write ."
+    "clean": "npx eslint --fix pages/* && npx eslint --fix components/* && npx prettier --write ."
   },
   "dependencies": {
     "next": "10.0.4",
