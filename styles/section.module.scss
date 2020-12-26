@@ -1,9 +1,10 @@
 .section {
   background: black;
   color: orange;
-  height: 20rem;
+  min-height: 50rem;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid white;
 }

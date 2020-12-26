@@ -11,21 +11,32 @@ import styles from '../styles/index.module.scss';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
+  const determineSection = (scrollTopPixels) => {
+    const scrollTopRem = scrollTopPixels / 16;
+    const sectionBreakpoints = [55, 105, 155, 205];
+    for (let i = 0; i < 4; i++) {
+      const sectionBreakpoint = sectionBreakpoints[i];
+      if (scrollTopRem < sectionBreakpoint) {
+        setCurrentSection(i);
+        break;
+      }
+    }
+  };
 
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      onScroll={(e) => determineSection(e.target.scrollTop)}
+    >
       <Head>
         <title>Christopher Kei</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation
-        currentSection={currentSection}
-        setCurrentSection={setCurrentSection}
-      />
-      <HelloSection changeSection={() => setCurrentSection(0)} />
-      <AboutSection changeSection={() => setCurrentSection(1)} />
-      <WorkSection changeSection={() => setCurrentSection(2)} />
-      <ContactSection changeSection={() => setCurrentSection(3)} />
+      <Navigation currentSection={currentSection} />
+      <HelloSection />
+      <AboutSection />
+      <WorkSection />
+      <ContactSection />
       <Footer />
     </div>
   );
