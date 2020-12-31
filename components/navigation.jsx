@@ -4,8 +4,8 @@ import Link from 'next/link';
 import styles from '../styles/navigation.module.scss';
 
 const Navigation = (props) => {
-  const { currentSection } = props;
-  const linkColor = (index) => (currentSection === index ? 'orange' : 'white');
+  const { currentSection, color } = props;
+  const linkColor = (index) => (currentSection === index ? color : 'white');
 
   return (
     <nav className={styles.navigationBar}>

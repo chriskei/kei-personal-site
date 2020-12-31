@@ -11,7 +11,10 @@ import styles from '../styles/index.module.scss';
 
 export default function Home() {
   const [currentSection, setCurrentSection] = useState(0);
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [currentBackgroundColor, setCurrentBackgroundColor] = useState('red');
   const determineSection = (scrollTopPixels) => {
+    setCurrentPosition(scrollTopPixels);
     const scrollTopRem = scrollTopPixels / 16;
     const sectionBreakpoints = [55, 105, 155, 205];
     for (let i = 0; i < 4; i += 1) {
@@ -22,18 +25,39 @@ export default function Home() {
       }
     }
   };
+  const determineColor = (scrollTopPixels) => {
+    const scrollTopRem = scrollTopPixels / 16;
+    const sectionBreakpoints = [55, 105, 155, 205];
+    const colorMap = ['red', 'yellow', 'green', 'blue'];
+    for (let i = 0; i < 4; i += 1) {
+      const sectionBreakpoint = sectionBreakpoints[i];
+      if (scrollTopRem < sectionBreakpoint) {
+        setCurrentBackgroundColor(colorMap[i]);
+        break;
+      }
+    }
+  };
 
   return (
     <div
+      style={{
+        backgroundColor: currentBackgroundColor,
+      }}
       className={styles.container}
-      onScroll={(e) => determineSection(e.target.scrollTop)}
+      onScroll={(e) => {
+        determineSection(e.target.scrollTop);
+        determineColor(e.target.scrollTop);
+      }}
     >
       <Head>
         <title>Christopher Kei</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navigation currentSection={currentSection} />
-      <HelloSection />
+      <Navigation
+        currentSection={currentSection}
+        color={currentBackgroundColor}
+      />
+      <HelloSection position={currentPosition} />
       <AboutSection />
       <WorkSection />
       <ContactSection />

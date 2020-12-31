@@ -4,7 +4,7 @@ import { Canvas } from 'react-three-fiber';
 import Section from './section';
 
 const HelloSection = (props) => {
-  const { changeSection } = props;
+  const { changeSection, position } = props;
   const [light, setLight] = useState(10);
 
   return (
@@ -13,13 +13,17 @@ const HelloSection = (props) => {
       <div style={{ height: 500, width: 500, background: 'green' }}>
         <Canvas>
           <pointLight position={[10, light, 10]} />
-          <mesh>
-            <sphereBufferGeometry />
-            <meshStandardMaterial color="hotpink" />
-          </mesh>
+          {position !== 0 && (
+            <mesh position={[0, position / 100, 0]}>
+              <sphereBufferGeometry />
+              <meshStandardMaterial color="hotpink" />
+            </mesh>
+          )}
         </Canvas>
       </div>
-      <button onClick={() => setLight((light + 10) % 30)}>click</button>
+      <button type="button" onClick={() => setLight((light + 10) % 30)}>
+        click
+      </button>
     </Section>
   );
 };
