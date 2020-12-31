@@ -39,6 +39,7 @@
         "memberSyntaxSortOrder": ["single", "multiple", "all", "none"],
         "allowSeparatedGroups": true
       }
-    ]
+    ],
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }

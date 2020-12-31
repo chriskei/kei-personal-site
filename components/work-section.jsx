@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Section } from './section';
+import Section from './section';
 
 const WorkSection = (props) => {
   const { changeSection } = props;
@@ -12,4 +12,4 @@ const WorkSection = (props) => {
   );
 };
 
-export { WorkSection };
+export default WorkSection;

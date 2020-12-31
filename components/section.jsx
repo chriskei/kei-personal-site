@@ -12,4 +12,4 @@ const Section = (props) => {
   );
 };
 
-export { Section };
+export default Section;
