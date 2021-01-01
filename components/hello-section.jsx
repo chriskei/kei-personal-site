@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Canvas } from 'react-three-fiber';
 
 import Section from './section';
+import Text from './text';
 
 const HelloSection = (props) => {
   const { changeSection, position } = props;
@@ -10,7 +11,7 @@ const HelloSection = (props) => {
   return (
     <Section id="hello" changeSection={changeSection}>
       <p>Hello section</p>
-      <div style={{ height: 500, width: 500, background: 'green' }}>
+      <div style={{ height: 500, width: 500 }}>
         <Canvas>
           <pointLight position={[10, light, 10]} />
           {position !== 0 && (
@@ -19,6 +20,7 @@ const HelloSection = (props) => {
               <meshStandardMaterial color="hotpink" />
             </mesh>
           )}
+          <Text position={position}>hi</Text>
         </Canvas>
       </div>
       <button type="button" onClick={() => setLight((light + 10) % 30)}>
