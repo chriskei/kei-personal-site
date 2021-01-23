@@ -7,7 +7,7 @@ const WorkSection = (props) => {
 
   return (
     <Section id="work" changeSection={changeSection}>
-      <p>Work section</p>
+      <p>Work section - move GitHub handle here</p>
     </Section>
   );
 };

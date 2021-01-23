@@ -6,7 +6,6 @@ import HelloSection from '../components/hello-section';
 import AboutSection from '../components/about-section';
 import WorkSection from '../components/work-section';
 import ContactSection from '../components/contact-section';
-import Footer from '../components/footer';
 import styles from '../styles/index.module.scss';
 
 export default function Home() {
@@ -61,7 +60,6 @@ export default function Home() {
       <AboutSection />
       <WorkSection />
       <ContactSection />
-      <Footer />
     </div>
   );
 }

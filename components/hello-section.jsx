@@ -20,7 +20,7 @@ const HelloSection = (props) => {
               <meshStandardMaterial color="hotpink" />
             </mesh>
           )}
-          <Text position={position}>hi</Text>
+          <Text x={position}>hi</Text>
         </Canvas>
       </div>
       <button type="button" onClick={() => setLight((light + 10) % 30)}>
